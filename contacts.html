@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Fluffy Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="about.html" class="nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="contacts-page">
+        <div class="container">
+            <h1 class="page-title">Контакты</h1>
+            
+            <div class="contacts-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Адрес</h3>
+                        <p>г. Москва, ул. Пушкина, д. 42</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Телефон</h3>
+                        <p>+7 (999) 123-45-67</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@fluffychef.ru</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Время работы</h3>
+                        <p>Пн-Пт: 9:00-20:00<br>Сб-Вс: 10:00-18:00</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Остались вопросы?</h2>
+                    <p>Напишите нам, и мы обязательно ответим</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Имя *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Тема</label>
+                            <input type="text" id="contact-subject" name="subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Сообщение *</label>
+                            <textarea id="contact-message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Мы на карте</h2>
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.8242304182977!2d37.21110667707205!3d55.6050726730299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b556c30d706bd9%3A0xd6fc58ea2c388f25!2z0YPQuy4g0J_Rg9GI0LrQuNC90LAsIDQyLCDQotC-0LvRgdGC0L7Qv9Cw0LvRjNGG0LXQstC-LCDQnNC-0YHQutCy0LAsIDE0MzM1MA!5e0!3m2!1sru!2sru!4v1764249189150!5m2!1sru!2sru" width="1100" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

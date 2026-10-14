@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы - Fluffy Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="about.html" class="nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link active">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="reviews-page">
+        <div class="container">
+            <h1 class="page-title">Отзывы наших клиентов</h1>
+            
+            <div class="reviews-content">
+                <div class="reviews-stats">
+                    <div class="rating-overview">
+                        <div class="average-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="rating-number">4.7</div>
+                            <div class="rating-text">из 5 на основе 234 отзывов</div>
+                        </div>
+                    </div>
+                    
+                    <div class="add-review-btn">
+                        <button class="btn btn-primary" id="add-review-btn">Написать отзыв</button>
+                    </div>
+                </div>
+
+                <div class="reviews-list" id="reviews-list">
+                    <!-- Отзывы загружаются через JavaScript -->
+                </div>
+
+                <div class="load-more-reviews">
+                    <button class="btn btn-outline" id="load-more-reviews">Показать еще отзывы</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно добавления отзыва -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Написать отзыв</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="review-form" class="review-form">
+                <div class="form-group">
+                    <label for="reviewer-name">Ваше имя *</label>
+                    <input type="text" id="reviewer-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewer-pet">Питомец</label>
+                    <input type="text" id="reviewer-pet" name="pet" placeholder="Кличка и вид питомца">
+                </div>
+                
+                <div class="form-group">
+                    <label>Оценка *</label>
+                    <div class="rating-input">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text">Текст отзыва *</label>
+                    <textarea id="review-text" name="text" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-review">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="reviews.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

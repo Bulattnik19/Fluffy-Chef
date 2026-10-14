@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Fluffy Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="about.html" class="nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link active">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <h1 class="page-title">Корзина</h1>
+            
+            <div class="cart-content">
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары в корзине загружаются через JavaScript -->
+                    <div class="empty-cart" id="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Ваша корзина пуста</h3>
+                        <p>Добавьте товары из каталога</p>
+                        <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Итого</h3>
+                        <div class="summary-row">
+                            <span>Товары:</span>
+                            <span id="subtotal">0 ₽</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Доставка:</span>
+                            <span id="delivery">0 ₽</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Всего:</span>
+                            <span id="total">0 ₽</span>
+                        </div>
+                        <button id="checkout-btn" class="btn btn-primary btn-large" disabled>Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Карта отслеживания доставки -->
+<div class="delivery-tracker">
+    <h3><i class="fas fa-truck"></i> Отслеживание доставки</h3>
+    <div class="tracker-container">
+        <div class="tracker-map" id="tracker-map">
+            <div class="map-background">
+                <!-- Карта -->
+                <div class="map-grid">
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                    <div class="map-cell"></div>
+                </div>
+                
+                <!-- Маршрут -->
+                <div class="delivery-route">
+                    <div class="route-path"></div>
+                    <div class="route-point warehouse active">
+                        <div class="point-icon">🏭</div>
+                        <div class="point-label">Склад</div>
+                    </div>
+                    <div class="route-point sorting">
+                        <div class="point-icon">📦</div>
+                        <div class="point-label">Сортировка</div>
+                    </div>
+                    <div class="route-point transit">
+                        <div class="point-icon">🚚</div>
+                        <div class="point-label">В пути</div>
+                    </div>
+                    <div class="route-point destination">
+                        <div class="point-icon">🏠</div>
+                        <div class="point-label">Ваш адрес</div>
+                    </div>
+                </div>
+                
+                <!-- Курьер -->
+                <div class="delivery-vehicle" id="delivery-vehicle">
+                    <div class="vehicle-icon">🚚</div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-driver">Курьер: Иван</div>
+                        <div class="vehicle-distance">~15 мин</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tracker-info">
+            <div class="delivery-steps">
+                <h4>Статус доставки:</h4>
+                <div class="steps-timeline">
+                    <div class="step active">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Заказ принят</div>
+                            <div class="step-time">10:30</div>
+                        </div>
+                    </div>
+                    <div class="step active">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Собирается</div>
+                            <div class="step-time">11:00</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Передан курьеру</div>
+                            <div class="step-time">Ожидается 12:30</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">В пути</div>
+                            <div class="step-time">Ожидается 13:00</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">Доставлен</div>
+                            <div class="step-time">Ожидается 14:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="delivery-controls">
+                <button class="btn btn-outline" id="simulate-delivery">
+                    <i class="fas fa-play"></i> Симулировать доставку
+                </button>
+                <button class="btn btn-secondary" id="refresh-tracker">
+                    <i class="fas fa-sync-alt"></i> Обновить
+                </button>
+            </div>
+            
+            <div class="delivery-estimate">
+                <h4>Примерное время доставки:</h4>
+                <div class="estimate-timer">
+                    <div class="timer-circle">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle class="timer-bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="timer-progress" cx="60" cy="60" r="54"></circle>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="timer-minutes">45</span>
+                            <small>минут</small>
+                        </div>
+                    </div>
+                    <div class="timer-info">
+                        <p>Ваш заказ будет доставлен в течение <strong id="delivery-time">45 минут</strong></p>
+                        <div class="weather-info">
+                            <i class="fas fa-cloud-sun"></i>
+                            <span>Погода: солнечно, +18°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Модальное окно оформления заказа -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Оформление заказа</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="name">ФИО *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Адрес доставки *</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comment">Комментарий к заказу</label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-order">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Подтвердить заказ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="delivery-tracker.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Fluffy Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="about.html" class="nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link active">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="catalog-page">
+        <div class="container">
+            <h1 class="page-title">Каталог товаров</h1>
+            <!-- Конструктор корма -->
+<div class="food-builder">
+    <h3><i class="fas fa-utensils"></i> Соберите идеальный корм</h3>
+    <div class="builder-container">
+        <div class="builder-base">
+            <div class="base-selector">
+                <h4>Основа корма:</h4>
+                <div class="base-options">
+                    <button class="base-option active" data-base="chicken">
+                        <i class="fas fa-drumstick-bite"></i> Курица
+                    </button>
+                    <button class="base-option" data-base="fish">
+                        <i class="fas fa-fish"></i> Рыба
+                    </button>
+                    <button class="base-option" data-base="beef">
+                        <i class="fas fa-hamburger"></i> Говядина
+                    </button>
+                    <button class="base-option" data-base="vegetable">
+                        <i class="fas fa-carrot"></i> Овощи
+                    </button>
+                </div>
+            </div>
+            
+            <div class="ingredients-selector">
+                <h4>Добавки:</h4>
+                <div class="ingredients-grid">
+                    <div class="ingredient" data-ingredient="vitamins">
+                        <div class="ingredient-icon">💊</div>
+                        <span>Витамины</span>
+                        <div class="ingredient-slider">
+                            <input type="range" min="0" max="100" value="30">
+                        </div>
+                    </div>
+                    <div class="ingredient" data-ingredient="fiber">
+                        <div class="ingredient-icon">🌾</div>
+                        <span>Клетчатка</span>
+                        <div class="ingredient-slider">
+                            <input type="range" min="0" max="100" value="40">
+                        </div>
+                    </div>
+                    <div class="ingredient" data-ingredient="protein">
+                        <div class="ingredient-icon">🥚</div>
+                        <span>Протеин</span>
+                        <div class="ingredient-slider">
+                            <input type="range" min="0" max="100" value="60">
+                        </div>
+                    </div>
+                    <div class="ingredient" data-ingredient="calcium">
+                        <div class="ingredient-icon">🦴</div>
+                        <span>Кальций</span>
+                        <div class="ingredient-slider">
+                            <input type="range" min="0" max="100" value="25">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="builder-preview">
+            <div class="food-visualization">
+                <div class="food-base" id="food-base"></div>
+                <div class="ingredient-layer vitamins" style="opacity: 0.3"></div>
+                <div class="ingredient-layer fiber" style="opacity: 0.4"></div>
+                <div class="ingredient-layer protein" style="opacity: 0.6"></div>
+                <div class="ingredient-layer calcium" style="opacity: 0.25"></div>
+            </div>
+            
+            <div class="food-stats">
+                <h4>Характеристики:</h4>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-label">Калорийность</div>
+                        <div class="stat-value" id="calories">350 ккал</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Полезность</div>
+                        <div class="stat-value" id="health">85%</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Вкусность</div>
+                        <div class="stat-value" id="taste">92%</div>
+                        <div class="stat-bar">
+                            <div class="stat-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="builder-result">
+                    <div class="result-price">
+                        <span>Примерная цена:</span>
+                        <strong id="estimated-price">450 ₽</strong>
+                    </div>
+                    <button class="btn btn-primary" id="save-recipe">
+                        <i class="fas fa-save"></i> Сохранить рецепт
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <div class="catalog-content">
+                <!-- Фильтры -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Тип животного</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="animal" value="all" checked> Все животные
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="animal" value="cat"> Кошки
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="animal" value="dog"> Собаки
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="animal" value="rodent"> Грызуны
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="animal" value="bird"> Птицы
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Тип продукта</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="all" checked> Все продукты
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="food"> Корм
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="treat"> Лакомство
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Цена, ₽</h3>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <input type="range" id="price-min" min="0" max="5000" value="0" class="price-slider">
+                                <input type="range" id="price-max" min="0" max="5000" value="5000" class="price-slider">
+                            </div>
+                            <div class="price-values">
+                                от <span id="min-price">0</span> до <span id="max-price">5000</span> ₽
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button id="apply-filters" class="btn btn-primary">Применить фильтры</button>
+                        <button id="reset-filters" class="btn btn-secondary">Сбросить всё</button>
+                    </div>
+                </aside>
+
+                <!-- Товары -->
+                <section class="products-section">
+                    <div class="products-header">
+                        <div class="sort-options">
+                            <label for="sort-select">Сортировка:</label>
+                            <select id="sort-select">
+                                <option value="name">По названию</option>
+                                <option value="price-low">Сначала дешевые</option>
+                                <option value="price-high">Сначала дорогие</option>
+                                <option value="popular">По популярности</option>
+                            </select>
+                        </div>
+                        <div class="products-count">
+                            Найдено товаров: <span id="products-found">0</span>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="catalog-products">
+                        <!-- Товары загружаются через JavaScript -->
+                    </div>
+
+                    <div class="load-more">
+                        <button id="load-more-btn" class="btn btn-outline">Показать еще</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="catalog.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="food-builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Chef - Главная</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Кнопка для слабовидящих -->
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Главная</a></li>
+                    <li><a href="about.html" class="nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-fade-up">Питание, которое любят ваши питомцы</h1>
+                <p class="hero-subtitle animate-fade-up">Натуральные корма и лакомства для животных с заботой о их здоровье</p>
+                <a href="catalog.html" class="btn btn-primary animate-fade-up">В каталог</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-pets.jpg" alt="Довольные питомцы" class="animate-scale">
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают Fluffy Chef?</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Натуральные ингредиенты</h3>
+                    <p>Только качественные и безопасные компоненты в составе</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>С заботой о здоровье</h3>
+                    <p>Сбалансированные рецепты для поддержания здоровья питомцев</p>
+                </div>
+                <div class="feature-card animate-fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставляем заказы в кратчайшие сроки по всей стране</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Интерактивный питомец -->
+<section class="interactive-pet">
+    <div class="container">
+        <h2 class="section-title">Познакомьтесь с нашими вкусами</h2>
+        <div class="pet-container">
+            <div class="pet-selector">
+                <button class="pet-btn active" data-pet="cat">
+                    <i class="fas fa-cat"></i> Кошка
+                </button>
+                <button class="pet-btn" data-pet="dog">
+                    <i class="fas fa-dog"></i> Собака
+                </button>
+                <button class="pet-btn" data-pet="rabbit">
+                    <i class="fas fa-rabbit"></i> Кролик
+                </button>
+                <button class="pet-btn" data-pet="bird">
+                    <i class="fas fa-dove"></i> Птица
+                </button>
+            </div>
+            
+            <div class="pet-display">
+                <div class="pet-3d" id="pet-3d">
+                    <!-- 3D модель будет тут -->
+                    <div class="pet-model cat" id="pet-model">
+                        <div class="pet-body">
+                            <div class="pet-head">
+                                <div class="pet-ear left"></div>
+                                <div class="pet-ear right"></div>
+                                <div class="pet-eye left"></div>
+                                <div class="pet-eye right"></div>
+                                <div class="pet-nose"></div>
+                                <div class="pet-mouth"></div>
+                            </div>
+                            <div class="pet-tail"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pet-info">
+                    <h3 id="pet-name">Кошка Мурка</h3>
+                    <p id="pet-description">Любит рыбные лакомства и молочные корма. Предпочитает есть 4 раза в день небольшими порциями.</p>
+                    
+                    <div class="pet-foods">
+                        <h4>Рекомендуемые продукты:</h4>
+                        <div class="food-items">
+                            <div class="food-item" data-food="fish">
+                                <span>🐟 Рыбные лакомства</span>
+                                <div class="food-bar">
+                                    <div class="food-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="food-item" data-food="chicken">
+                                <span>🍗 Куриное филе</span>
+                                <div class="food-bar">
+                                    <div class="food-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="food-item" data-food="milk">
+                                <span>🥛 Молочные корма</span>
+                                <div class="food-bar">
+                                    <div class="food-fill" style="width: 60%"></div>
+                                    <script src="interactive-pet.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Популярные товары -->
+    <section class="popular-products">
+        <div class="container">
+            <h2 class="section-title">Популярные товары</h2>
+            <div class="products-grid" id="popular-products">
+                <!-- Товары будут загружены через JavaScript -->
+            </div>
+        </div>
+    </section>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-paw"></i>
+                <span>Fluffy Chef</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Загружаем лучшие товары для ваших питомцев...</p>
+        </div>
+    </div>
+<!-- Секция с интерактивными акциями -->
+<section class="interactive-promo">
+    <div class="container">
+        <h2 class="section-title">Специальные предложения</h2>
+        <div class="promo-cards">
+            <div class="promo-card" data-promo="discount">
+                <div class="promo-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3>Скидка 15%</h3>
+                <p>На первый заказ при подписке на рассылку</p>
+                <button class="btn btn-outline promo-btn" data-action="subscribe">Подписаться</button>
+            </div>
+            <div class="promo-card" data-promo="gift">
+                <div class="promo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Подарок</h3>
+                <p>Бесплатная игрушка при заказе от 2000₽</p>
+                <button class="btn btn-outline promo-btn" data-action="learn-more">Узнать больше</button>
+            </div>
+            <div class="promo-card" data-promo="delivery">
+                <div class="promo-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Бесплатная доставка</h3>
+                <p>При заказе от 1500₽ по Москве</p>
+                <button class="btn btn-outline promo-btn" data-action="delivery-info">Подробности</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно для акций -->
+<div id="promo-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="promo-modal-title">Специальное предложение</h2>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body" id="promo-modal-content">
+            <!-- Контент будет загружен динамически -->
+        </div>
+    </div>
+</div>
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

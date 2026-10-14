@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Fluffy Chef</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Режим для слабовидящих">
+        <i class="fas fa-eye"></i>
+    </button>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Fluffy Chef" class="logo-img">
+                <span class="logo-text">Fluffy Chef</span>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="about.html" class="nav-link active">О нас</a></li>
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="cart.html" class="nav-link">Корзина <span id="cart-count">0</span></a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <div class="container">
+            <h1 class="page-title">О компании Fluffy Chef</h1>
+            
+            <section class="about-hero">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Наша миссия</h2>
+                        <p>Fluffy Chef - это компания, которая с 2015 года создает качественные и полезные корма для ваших питомцев. Мы верим, что каждое животное заслуживает лучшего питания.</p>
+                        
+                        <h2>Наша философия</h2>
+                        <p>Мы используем только натуральные ингредиенты, без искусственных добавок и консервантов. Каждый рецепт разрабатывается совместно с ветеринарными специалистами.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-text">лет на рынке</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5000+</div>
+                                <div class="stat-text">довольных клиентов</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-text">видов продукции</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/команда.webp" width="550px" alt="Наша команда">
+                    </div>
+                </div>
+            </section>
+
+            <section class="values">
+                <h2 class="section-title">Наши ценности</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Качество</h3>
+                        <p>Строгий контроль качества на всех этапах производства</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Забота</h3>
+                        <p>Мы действительно любим животных и заботимся о них</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Экологичность</h3>
+                        <p>Используем экологичную упаковку и sustainable-практики</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- История компании -->
+<section class="company-history">
+    <div class="container">
+        <h2 class="section-title">Наша история</h2>
+        
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                
+                <div class="timeline-item" data-year="2015">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Основание компании</h3>
+                        <p>Fluffy Chef начинал как маленький семейный бизнес по производству натуральных лакомств для домашних животных.</p>
+                        <div class="timeline-image">
+                            <img src="images/history-2015.jpg" alt="Основание компании">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2017">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <h3>Первая линейка кормов</h3>
+                        <p>Запустили первую линейку полнорационных кормов для кошек и собак. Получили сертификат качества.</p>
+                        <div class="timeline-image">
+                            <img src="images/history-2017.jpg" alt="Первая линейка кормов">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2019">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3>Расширение ассортимента</h3>
+                        <p>Добавили корма для грызунов и птиц. Открыли онлайн-магазин и начали доставку по всей России.</p>
+                        <div class="timeline-image">
+                            <img src="images/history-2019.jpg" alt="Расширение ассортимента">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2021">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>Сотрудничество с ветеринарами</h3>
+                        <p>Начали сотрудничество с ведущими ветеринарными клиниками. Разработали лечебные диетические корма.</p>
+                        <div class="timeline-image">
+                            <img src="images/history-2021.jpg" alt="Сотрудничество с ветеринарами">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3>Инновации и будущее</h3>
+                        <p>Внедрили персонализированные корма и мобильное приложение. Работаем над экологичной упаковкой.</p>
+                        <div class="timeline-image">
+                            <img src="images/history-2024.jpg" alt="Инновации и будущее">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-controls">
+                <button class="btn btn-secondary" id="prev-year">
+                    <i class="fas fa-chevron-left"></i> Предыдущий год
+                </button>
+                <div class="year-slider">
+                    <input type="range" id="year-slider" min="2015" max="2024" step="1" value="2015">
+                    <div class="year-display">
+                        <span id="current-year">2015</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" id="next-year">
+                    Следующий год <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Fluffy Chef" class="logo-img">
+                        <span class="logo-text">Fluffy Chef</span>
+                    </div>
+                    <p>Качественные корма и лакомства для ваших питомцев</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 123-45-67</p>
+                    <p>info@fluffychef.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="https://vk.com/club234339316" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/+rTelfAxklVE0NWE6" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="accessibility.js"></script>
+    <script src="history-timeline.js"></script>
+</body>
+</html>

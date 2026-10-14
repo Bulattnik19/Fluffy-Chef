@@ -1,0 +1,145 @@
+/* Режим высокой доступности */
+.accessibility-high {
+    --primary-color: #ffffff;
+    --secondary-color: #f8f9fa;
+    --accent-color: #0056b3;
+    --dark-color: #000000;
+    --text-color: #000000;
+    --light-text: #333333;
+    --white: #ffffff;
+}
+
+.accessibility-high body {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.accessibility-high .container {
+    max-width: 1000px;
+}
+
+.accessibility-high .nav-link,
+.accessibility-high .btn,
+.accessibility-high .feature-card,
+.accessibility-high .product-card,
+.accessibility-high .filter-option {
+    font-size: 1.1em;
+}
+
+.accessibility-high .hero-title {
+    font-size: 2.5em;
+}
+
+.accessibility-high .section-title {
+    font-size: 2em;
+}
+
+.accessibility-high .product-title,
+.accessibility-high .feature-card h3,
+.accessibility-high .value-card h3 {
+    font-size: 1.3em;
+}
+
+/* Высококонтрастный режим */
+.accessibility-high-contrast {
+    --primary-color: #000000;
+    --secondary-color: #000000;
+    --accent-color: #ffff00;
+    --dark-color: #ffffff;
+    --text-color: #ffffff;
+    --light-text: #cccccc;
+    --white: #000000;
+}
+
+.accessibility-high-contrast body {
+    background: #000000;
+    color: #ffffff;
+}
+
+.accessibility-high-contrast .header {
+    background: #000000;
+    border-bottom: 2px solid #ffff00;
+}
+
+.accessibility-high-contrast .feature-card,
+.accessibility-high-contrast .product-card,
+.accessibility-high-contrast .value-card,
+.accessibility-high-contrast .contact-card,
+.accessibility-high-contrast .review-card,
+.accessibility-high-contrast .cart-items,
+.accessibility-high-contrast .cart-summary,
+.accessibility-high-contrast .filters-sidebar {
+    background: #000000;
+    border: 2px solid #ffff00;
+    color: #ffffff;
+}
+
+.accessibility-high-contrast .btn-primary {
+    background: #ffff00;
+    color: #000000;
+    border: 2px solid #ffff00;
+}
+
+.accessibility-high-contrast .btn-secondary {
+    background: #000000;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+.accessibility-high-contrast .btn-outline {
+    background: transparent;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+.accessibility-high-contrast .nav-link {
+    color: #ffff00;
+}
+
+.accessibility-high-contrast .nav-link.active {
+    color: #ffffff;
+    background: #ffff00;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.accessibility-high-contrast input,
+.accessibility-high-contrast textarea,
+.accessibility-high-contrast select {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #ffff00;
+}
+
+.accessibility-high-contrast input:focus,
+.accessibility-high-contrast textarea:focus,
+.accessibility-high-contrast select:focus {
+    border-color: #ffffff;
+    outline: 2px solid #ffff00;
+}
+
+/* Увеличение размера кликабельных элементов */
+.accessibility-high .btn,
+.accessibility-high .nav-link,
+.accessibility-high .filter-option,
+.accessibility-high .quantity-btn,
+.accessibility-high .remove-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Улучшение видимости фокуса */
+.accessibility-high *:focus,
+.accessibility-high-contrast *:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Увеличение межбуквенного spacing для читаемости */
+.accessibility-high body {
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
